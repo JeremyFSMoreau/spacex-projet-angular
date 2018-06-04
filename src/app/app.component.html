@@ -1,24 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <mat-form-field>
-    <input type="text" matInput placeholder="App Name" [(ngModel)]="config.title">
-  </mat-form-field>
-  <span>
-    Welcome to {{ config.title }}
-  </span>
-</div>
-
-<div>
-  <mat-form-field>
-      <input type="text" matInput placeholder="App Version" [(ngModel)]="config.version">
-    </mat-form-field>
-    <span>
-      Welcome to {{ config.version }}
-    </span>
-    <br><br>
-    {{ config | json }}
-
-</div>
-
-<button mat-raised-button color="primary" (click)="goToMissionsPage()">Go to Missions Page</button>
-<router-outlet></router-outlet>
+<mat-drawer-container class="container" autosize>
+  <mat-toolbar color="primary">
+    <button type="button" mat-icon-button>
+      <mat-icon> menu </mat-icon>
+    </button>
+    <mat-drawer class="sidenav" #drawer mode="push">
+      <p> Item A </p>
+      <p> Item B </p>
+    </mat-drawer>
+    <div class="sidenav-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-toolbar>
+</mat-drawer-container>
