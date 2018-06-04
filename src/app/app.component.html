@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <mat-form-field class="example-full-width">
+<div>
+  <mat-form-field>
     <input type="text" matInput placeholder="App Name" [(ngModel)]="config.title">
   </mat-form-field>
   <span>
@@ -8,8 +8,8 @@
   </span>
 </div>
 
-<div style="text-align:center">
-  <mat-form-field class="example-full-width">
+<div>
+  <mat-form-field>
       <input type="text" matInput placeholder="App Version" [(ngModel)]="config.version">
     </mat-form-field>
     <span>
@@ -20,3 +20,5 @@
 
 </div>
 
+<button mat-raised-button color="primary" (click)="goToMissionsPage()">Go to Missions Page</button>
+<router-outlet></router-outlet>

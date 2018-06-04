@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,13 @@ export class AppComponent {
   config = {
     title:"space X",
     version:"Version 1"
+  }
+
+  constructor(private router: Router){
+
+  }
+
+  goToMissionsPage(){
+    this.router.navigate(['missions']);
   }
 }
