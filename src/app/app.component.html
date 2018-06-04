@@ -1,11 +1,11 @@
 <mat-drawer-container class="container" autosize>
   <mat-toolbar color="primary">
-    <button type="button" mat-icon-button>
+    <button type="button" mat-icon-button (click)="drawer.toggle()">
       <mat-icon> menu </mat-icon>
     </button>
     <mat-drawer class="sidenav" #drawer mode="push">
-      <p> Item A </p>
-      <p> Item B </p>
+      <mat-list-item> Item A </mat-list-item>
+      <mat-list-item> Item B </mat-list-item>
     </mat-drawer>
     <div class="sidenav-content">
       <router-outlet></router-outlet>

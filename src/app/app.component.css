@@ -3,10 +3,13 @@
     height: 100%;
 }
 
+.sidenav-content{
+    display: flex;
+}
 .sidenav{
-    display:flex;
-    flex: 0 0 auto;
-    width:100%;
-    justify-content: left;
-    align-items: left;
+}
+
+.mat-drawer{
+    padding: 0;
+    min-width: 300px;
 }
