@@ -1,0 +1,22 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <mat-form-field class="example-full-width">
+    <input type="text" matInput placeholder="App Name" [(ngModel)]="config.title">
+  </mat-form-field>
+  <span>
+    Welcome to {{ config.title }}
+  </span>
+</div>
+
+<div style="text-align:center">
+  <mat-form-field class="example-full-width">
+      <input type="text" matInput placeholder="App Version" [(ngModel)]="config.version">
+    </mat-form-field>
+    <span>
+      Welcome to {{ config.version }}
+    </span>
+    <br><br>
+    {{ config | json }}
+
+</div>
+
