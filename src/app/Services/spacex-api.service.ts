@@ -45,6 +45,16 @@ export class SpacexApiService {
       );
   }
 
+  //Capsule Info
+
+  getCapsuleInfo(): Observable<CapsuleInfo> {
+    const endpoint = `${this.baseUrl}/capsules`;
+    return this.httpClient.get<CapsuleInfo>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Launchpad
 
   getLaunchpad<Launchpad>(): Observable<Launchpad> {

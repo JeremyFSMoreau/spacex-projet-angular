@@ -7,6 +7,7 @@ import { MaterialModule } from './material/material.module';
 import { MissionsComponent } from './missions/missions.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CompanyInfoComponent } from './company-info/company-info.component';
+import { CapsuleInfoComponent } from './capsule-info/capsule-info.component';
 import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +18,7 @@ import { LaunchpadComponent } from './launchpad/launchpad.component';
     AppComponent,
     MissionsComponent,
     CompanyInfoComponent,
+    CapsuleInfoComponent,
     LaunchComponent,
     LaunchpadComponent
   ],
