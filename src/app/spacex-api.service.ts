@@ -19,6 +19,13 @@ export class SpacexApiService {
     );
   }
 
+  getCompanyHistory() : Observable<CompanyHistory>{
+    const endpoint = `${this.baseUrl}/info/history`;
+    return this.httpClient.get<CompanyHistory>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );  }
+
 getLaunches(): Observable<Launch[]> {
   const endpoint = `${this.baseUrl}/launches/all`;
   return this.httpClient.get<Launch[]>(endpoint)
