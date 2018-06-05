@@ -10,13 +10,15 @@ import { CompanyInfoComponent } from './company-info/company-info.component';
 import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import { LaunchpadComponent } from './launchpad/launchpad.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MissionsComponent,
     CompanyInfoComponent,
-    LaunchComponent
+    LaunchComponent,
+    LaunchpadComponent
   ],
   imports: [
     BrowserModule,
