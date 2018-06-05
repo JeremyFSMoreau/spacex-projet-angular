@@ -10,13 +10,17 @@ import { CompanyInfoComponent } from './company-info/company-info.component';
 import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import {RocketsComponent} from './rockets/rockets.component';
+import {RocketDetailsComponent} from './rocket-details/rocket-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MissionsComponent,
     CompanyInfoComponent,
-    LaunchComponent
+    LaunchComponent,
+    RocketsComponent,
+    RocketDetailsComponent
   ],
   imports: [
     BrowserModule,

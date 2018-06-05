@@ -3,10 +3,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MissionsComponent } from '../missions/missions.component';
 import { CompanyInfoComponent } from '../company-info/company-info.component';
+import {RocketsComponent} from '../rockets/rockets.component';
+import {RocketDetailsComponent} from '../rocket-details/rocket-details.component';
 
 const appRoutes: Routes = [
   { path: 'missions', component: MissionsComponent },
-  { path: 'companyInfo', component: CompanyInfoComponent }
+  { path: 'companyInfo', component: CompanyInfoComponent },
+  { path: 'rockets', component: RocketsComponent },
+  { path: 'rockets/:id', component: RocketDetailsComponent }
 ];
 
 @NgModule({

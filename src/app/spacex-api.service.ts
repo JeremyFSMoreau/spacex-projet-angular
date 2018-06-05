@@ -13,26 +13,42 @@ export class SpacexApiService {
 
   getCompanyInfo(): Observable<CompanyInfo> {
     const endpoint = `${this.baseUrl}/info`;
+
     return this.httpClient.get<CompanyInfo>(endpoint)
     .pipe(
       catchError(this.handleError)
     );
   }
 
-  getCompanyHistory() : Observable<CompanyHistory>{
+  getCompanyHistory(): Observable<CompanyHistory>{
     const endpoint = `${this.baseUrl}/info/history`;
     return this.httpClient.get<CompanyHistory>(endpoint)
     .pipe(
       catchError(this.handleError)
     );  }
 
-getLaunches(): Observable<Launch[]> {
-  const endpoint = `${this.baseUrl}/launches/all`;
-  return this.httpClient.get<Launch[]>(endpoint)
-  .pipe(
-    catchError(this.handleError)
-  );
-}
+  getLaunches(): Observable<Launch[]> {
+    const endpoint = `${this.baseUrl}/launches/all`;
+    return this.httpClient.get<Launch[]>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+  getRockets(): Observable<Rocket[]> {
+      const endpoint = `${this.baseUrl}/rockets`;
+      return this.httpClient.get<Rocket[]>(endpoint)
+          .pipe(
+              catchError(this.handleError)
+          );
+  }
+
+  getRocket(id): Observable<Rocket> {
+    const endpoint = `${this.baseUrl}/rockets/${id}`;
+      return this.httpClient.get<Rocket>(endpoint)
+          .pipe(
+              catchError(this.handleError)
+          );
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

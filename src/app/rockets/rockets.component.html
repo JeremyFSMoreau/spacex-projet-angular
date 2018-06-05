@@ -1,0 +1,13 @@
+<div *ngFor="let rocket of rockets">
+    <mat-card routerLink="/rockets/{{rocket.id}}">
+        <mat-card-header>
+            <mat-card-title>{{rocket.name}}</mat-card-title>
+            <mat-card-subtitle>First flight: {{rocket.first_flight | date:'dd/MM/yyyy'}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{rocket.cost_per_launch}} € / launch
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>
