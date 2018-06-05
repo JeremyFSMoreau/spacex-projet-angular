@@ -12,6 +12,8 @@ import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchpadComponent } from './launchpad/launchpad.component';
+import {RocketsComponent} from './rockets/rockets.component';
+import {RocketDetailsComponent} from './rocket-details/rocket-details.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,10 @@ import { LaunchpadComponent } from './launchpad/launchpad.component';
     CompanyInfoComponent,
     CapsuleInfoComponent,
     LaunchComponent,
-    LaunchpadComponent
+    LaunchpadComponent,
+    LaunchComponent,
+    RocketsComponent,
+    RocketDetailsComponent
   ],
   imports: [
     BrowserModule,

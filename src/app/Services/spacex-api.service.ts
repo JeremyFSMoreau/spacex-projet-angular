@@ -31,6 +31,22 @@ export class SpacexApiService {
       );
   }
 
+    getRockets(): Observable<Rocket[]> {
+        const endpoint = `${this.baseUrl}/rockets`;
+        return this.httpClient.get<Rocket[]>(endpoint)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
+    getRocket(id): Observable<Rocket> {
+        const endpoint = `${this.baseUrl}/rockets/${id}`;
+        return this.httpClient.get<Rocket>(endpoint)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
   // Launches
 
   GetMissions<T>(path: LaunchEndpoints, params: any = null): Observable<T> {
