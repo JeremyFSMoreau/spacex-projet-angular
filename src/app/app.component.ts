@@ -6,14 +6,21 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
   title = 'SpaceX Angular App';
 
-  config = {
-    title:"space X",
-    version:"Version 1"
-  }
-
+  public menuItems =
+  [
+    {
+      name: 'Missions',
+      path: '/missions'
+    },
+    {
+      name:'Company Info',
+      path: '/company-infos'
+    }
+  ];
   constructor(private router: Router){
 
   }
