@@ -21,6 +21,8 @@ export class SpacexApiService {
       );
   }
 
+  // Company history
+
   getCompanyHistory(): Observable<CompanyHistory> {
     const endpoint = `${this.baseUrl}/info/history`;
     return this.httpClient.get<CompanyHistory>(endpoint)
@@ -51,6 +53,16 @@ export class SpacexApiService {
     .pipe(
       catchError(this.handleError)
     );
+  }
+
+  // Launchpad
+
+  getLaunchpad<Launchpad>(): Observable<Launchpad> {
+    const endpoint = `${this.baseUrl}/launchpads`;
+    return this.httpClient.get<Launchpad>(endpoint)
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
   // Handlers

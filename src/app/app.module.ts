@@ -11,6 +11,7 @@ import { CapsuleInfoComponent } from './capsule-info/capsule-info.component';
 import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
+import { LaunchpadComponent } from './launchpad/launchpad.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     MissionsComponent,
     CompanyInfoComponent,
     CapsuleInfoComponent,
-    LaunchComponent
+    LaunchComponent,
+    LaunchpadComponent
   ],
   imports: [
     BrowserModule,
