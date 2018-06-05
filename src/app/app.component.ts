@@ -16,6 +16,10 @@ export class AppComponent {
     {
       name: 'Company info',
       path:  '/companyInfo'
+    },
+    {
+      name: 'Capsule Info',
+      path: '/capsuleInfo'
     }
   ];
 

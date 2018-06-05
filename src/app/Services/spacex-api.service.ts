@@ -43,6 +43,16 @@ export class SpacexApiService {
       );
   }
 
+  //Capsule Info
+
+  getCapsuleInfo(): Observable<CapsuleInfo> {
+    const endpoint = `${this.baseUrl}/capsules`;
+    return this.httpClient.get<CapsuleInfo>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Handlers
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
