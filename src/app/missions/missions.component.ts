@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SpacexApiService } from '../spacex-api.service';
+import { SpacexApiService } from '../Services/spacex-api.service';
+import { LaunchEndpoints } from '../Services/LaunchEndpoints';
 
 @Component({
   selector: 'app-missions',
@@ -10,8 +11,9 @@ export class MissionsComponent implements OnInit {
   launches: Launch[];
 
   constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getLaunches().subscribe(data => {
+    this.spacexApi.GetMissions<Launch[]>(LaunchEndpoints.All, {id: true, order: 'desc'}).subscribe(data => {
       this.launches = data;
+      console.log(data);
     });
   }
 

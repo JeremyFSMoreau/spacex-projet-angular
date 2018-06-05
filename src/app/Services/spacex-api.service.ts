@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError} from 'rxjs/operators';
+import { catchError } from 'rxjs/operators';
+import { LaunchEndpoints } from './LaunchEndpoints';
 
 @Injectable({
   providedIn: 'root'
@@ -11,29 +12,38 @@ export class SpacexApiService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // Company Info 
   getCompanyInfo(): Observable<CompanyInfo> {
     const endpoint = `${this.baseUrl}/info`;
     return this.httpClient.get<CompanyInfo>(endpoint)
-    .pipe(
-      catchError(this.handleError)
-    );
+      .pipe(
+        catchError(this.handleError)
+      );
   }
 
-  getCompanyHistory() : Observable<CompanyHistory>{
+  getCompanyHistory(): Observable<CompanyHistory> {
     const endpoint = `${this.baseUrl}/info/history`;
     return this.httpClient.get<CompanyHistory>(endpoint)
-    .pipe(
-      catchError(this.handleError)
-    );  }
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
 
-getLaunches(): Observable<Launch[]> {
-  const endpoint = `${this.baseUrl}/launches/all`;
-  return this.httpClient.get<Launch[]>(endpoint)
-  .pipe(
-    catchError(this.handleError)
-  );
-}
+  // Launches
 
+  GetMissions<T>(path: LaunchEndpoints, params: any = null): Observable<T> {
+    const endpoint = `${this.baseUrl}/launches/${LaunchEndpoints[path]}`;
+    let httpParams = new HttpParams();
+    Object.keys(params).forEach(function (key) {
+      httpParams = httpParams.append(key, params[key]);
+    });
+    return this.httpClient.get<T>(endpoint, { params: httpParams })
+      .pipe(
+        catchError(this.handleError)
+      );
+  }
+
+  // Handlers
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

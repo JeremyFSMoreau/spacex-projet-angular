@@ -2,6 +2,11 @@
   <mat-card-header>
     <img mat-card-avatar src="{{launch.links.mission_patch_small}}" />
     <mat-card-title>{{launch.mission_name}}</mat-card-title>
+    <div>
+      <mat-chip-list>
+        <mat-chip color="accent" selected="true">{{launch._id}}</mat-chip>
+      </mat-chip-list>
+    </div>
     <mat-card-subtitle>{{launch.launch_date_utc | date:'yyyy-MM-dd HH:mm'}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
