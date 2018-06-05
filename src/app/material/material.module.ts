@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   MatAutocompleteModule,
-  MatBadgeModule,
   MatBottomSheetModule,
   MatButtonModule,
   MatButtonToggleModule,
@@ -40,12 +39,10 @@ import {
 
 @NgModule({
   imports: [
-    CommonModule,
-    MatNativeDateModule
+    CommonModule
   ],
-  exports:[
+  exports: [
     MatAutocompleteModule,
-    MatBadgeModule,
     MatBottomSheetModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -78,8 +75,8 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatTreeModule,
-],
+    MatTreeModule
+  ],
   declarations: []
 })
 export class MaterialModule { }

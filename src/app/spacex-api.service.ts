@@ -1,25 +1,31 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SpacexApiService {
-
-  baseUrl='https://api.spacexdata.com/v2';
-  
+  baseUrl = 'https://api.spacexdata.com/v2';
 
   constructor(private httpClient: HttpClient) { }
 
-  getCompanyInfos(): Observable<any>{
-    const endpoint = `${this.baseUrl}/info`
-    return this.httpClient.get(endpoint)
+  getCompanyInfo(): Observable<CompanyInfo> {
+    const endpoint = `${this.baseUrl}/info`;
+    return this.httpClient.get<CompanyInfo>(endpoint)
     .pipe(
       catchError(this.handleError)
     );
   }
+
+getLaunches(): Observable<Launch[]> {
+  const endpoint = `${this.baseUrl}/launches/all`;
+  return this.httpClient.get<Launch[]>(endpoint)
+  .pipe(
+    catchError(this.handleError)
+  );
+}
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
@@ -35,6 +41,5 @@ export class SpacexApiService {
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
-  };
-      
+  }
 }

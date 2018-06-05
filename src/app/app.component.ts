@@ -1,31 +1,28 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MissionsComponent } from './missions/missions.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent {
-  title = 'SpaceX Angular App';
-
-  public menuItems =
-  [
+  public menuItems = [
     {
       name: 'Missions',
       path: '/missions'
     },
     {
-      name:'Company Info',
-      path: '/company-infos'
+      name: 'Company info',
+      path:  '/companyInfo'
     }
   ];
-  constructor(private router: Router){
 
+  constructor(private router: Router) {
   }
 
-  goToMissionsPage(){
-    this.router.navigate(['missions']);
+  goToMissionsPage() {
+    this.router.navigate(['/missions']);
   }
 }
