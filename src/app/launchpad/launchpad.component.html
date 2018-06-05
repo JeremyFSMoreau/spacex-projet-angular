@@ -1,0 +1,18 @@
+<div *ngFor="let launchpad of launchpads">
+  <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{launchpad.full_name}}</mat-card-title>
+        <div>
+          <mat-chip-list>
+            <mat-chip color="accent" selected="true">{{launchpad.status}}</mat-chip>
+          </mat-chip-list>
+        </div>
+        <mat-card-subtitle>{{launchpad.details}}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{launchpad.details}}
+        </p>
+      </mat-card-content>
+  </mat-card>
+</div>
