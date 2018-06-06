@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LaunchpadComponent } from './launchpad/launchpad.component';
 import {RocketsComponent} from './rockets/rockets.component';
 import {RocketDetailsComponent} from './rocket-details/rocket-details.component';
+import { LaunchpadDetailsComponent } from './launchpad-details/launchpad-details.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {RocketDetailsComponent} from './rocket-details/rocket-details.component'
     LaunchpadComponent,
     LaunchComponent,
     RocketsComponent,
-    RocketDetailsComponent
+    RocketDetailsComponent,
+    LaunchpadDetailsComponent
   ],
   imports: [
     BrowserModule,

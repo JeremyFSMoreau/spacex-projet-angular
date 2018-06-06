@@ -1,5 +1,5 @@
 <div *ngFor="let launchpad of launchpads">
-  <mat-card>
+  <mat-card routerLink="/launchpads/{{launchpad.id}}">
       <mat-card-header>
         <mat-card-title>{{launchpad.full_name}}</mat-card-title>
         <div>
