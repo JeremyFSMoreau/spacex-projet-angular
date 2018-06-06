@@ -31,6 +31,22 @@ export class SpacexApiService {
       );
   }
 
+    getRockets(): Observable<Rocket[]> {
+        const endpoint = `${this.baseUrl}/rockets`;
+        return this.httpClient.get<Rocket[]>(endpoint)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
+    getRocket(id): Observable<Rocket> {
+        const endpoint = `${this.baseUrl}/rockets/${id}`;
+        return this.httpClient.get<Rocket>(endpoint)
+            .pipe(
+                catchError(this.handleError)
+            );
+    }
+
   // Launches
 
   GetMissions<T>(path: LaunchEndpoints, params: any = null): Observable<T> {
@@ -45,6 +61,16 @@ export class SpacexApiService {
       );
   }
 
+  //Capsule Info
+
+  getCapsuleInfo(): Observable<CapsuleInfo> {
+    const endpoint = `${this.baseUrl}/capsules`;
+    return this.httpClient.get<CapsuleInfo>(endpoint)
+    .pipe(
+      catchError(this.handleError)
+    );
+  }
+
   // Launchpad
 
   getLaunchpad<Launchpad>(): Observable<Launchpad> {
@@ -54,6 +80,14 @@ export class SpacexApiService {
         catchError(this.handleError)
       );
   }
+
+  getLaunchpadDetails(id): Observable<Launchpad> {
+    const endpoint = `${this.baseUrl}/launchpads/${id}`;
+    return this.httpClient.get<Launchpad>(endpoint)
+        .pipe(
+            catchError(this.handleError)
+        );
+}
 
   // Handlers
   private handleError(error: HttpErrorResponse) {

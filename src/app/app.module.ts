@@ -7,18 +7,27 @@ import { MaterialModule } from './material/material.module';
 import { MissionsComponent } from './missions/missions.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { CompanyInfoComponent } from './company-info/company-info.component';
+import { CapsuleInfoComponent } from './capsule-info/capsule-info.component';
 import { LaunchComponent } from './launch/launch.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { HttpClientModule } from '@angular/common/http';
 import { LaunchpadComponent } from './launchpad/launchpad.component';
+import {RocketsComponent} from './rockets/rockets.component';
+import {RocketDetailsComponent} from './rocket-details/rocket-details.component';
+import { LaunchpadDetailsComponent } from './launchpad-details/launchpad-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MissionsComponent,
     CompanyInfoComponent,
+    CapsuleInfoComponent,
     LaunchComponent,
-    LaunchpadComponent
+    LaunchpadComponent,
+    LaunchComponent,
+    RocketsComponent,
+    RocketDetailsComponent,
+    LaunchpadDetailsComponent
   ],
   imports: [
     BrowserModule,

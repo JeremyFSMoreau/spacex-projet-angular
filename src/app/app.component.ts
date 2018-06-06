@@ -14,8 +14,16 @@ export class AppComponent {
       path: '/missions'
     },
     {
+        name: 'Rockets',
+        path: '/rockets'
+    },
+    {
       name: 'Company info',
       path:  '/companyInfo'
+    },
+    {
+      name: 'Capsule Info',
+      path: '/capsuleInfo'
     },
     {
       name: 'Launchpads',
