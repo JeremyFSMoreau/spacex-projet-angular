@@ -8,12 +8,15 @@ import { LaunchEndpoints } from '../Services/LaunchEndpoints';
   styleUrls: ['./missions.component.css']
 })
 export class MissionsComponent implements OnInit {
-  launches: Launch[];
+  nextLaunches: Launch[];
+  pastLaunches: Launch[];
 
   constructor(private spacexApi: SpacexApiService) {
+    this.spacexApi.GetMissions<Launch[]>(LaunchEndpoints.Upcoming, {id: true, order: 'desc'}).subscribe(data => {
+      this.nextLaunches = data;
+    });
     this.spacexApi.GetMissions<Launch[]>(LaunchEndpoints.All, {id: true, order: 'desc'}).subscribe(data => {
-      this.launches = data;
-      console.log(data);
+      this.pastLaunches = data;
     });
   }
 
