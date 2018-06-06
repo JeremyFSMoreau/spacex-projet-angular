@@ -22,7 +22,7 @@ export class AppComponent {
       path:  '/companyInfo'
     },
     {
-      name: 'Capsule Info',
+      name: 'Capsules',
       path: '/capsuleInfo'
     },
     {

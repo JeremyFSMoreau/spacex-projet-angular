@@ -63,7 +63,7 @@ export class SpacexApiService {
 
   //Capsule Info
 
-  getCapsuleInfo(): Observable<CapsuleInfo> {
+  getCapsuleInfo<CapsuleInfo>(): Observable<CapsuleInfo> {
     const endpoint = `${this.baseUrl}/capsules`;
     return this.httpClient.get<CapsuleInfo>(endpoint)
     .pipe(
