@@ -1,18 +1,59 @@
-<div *ngFor="let launchpad of launchpads">
-  <mat-card routerLink="/launchpads/{{launchpad.id}}">
-      <mat-card-header>
-        <mat-card-title>{{launchpad.full_name}}</mat-card-title>
-        <div>
-          <mat-chip-list>
-            <mat-chip color="accent" selected="true">{{launchpad.status}}</mat-chip>
-          </mat-chip-list>
+<mat-tab-group>
+  <mat-tab label="Active">
+    <div *ngFor="let launchpad of launchpads" >
+      <mat-card *ngIf="launchpad.status === 'active'" routerLink="/launchpads/{{launchpad.id}}">
+          <mat-card-header>
+            <mat-card-title><h2>{{launchpad.full_name}}</h2></mat-card-title>
+            <mat-chip-list>
+              <mat-chip color="accent" selected="true">{{launchpad.status | uppercase}}</mat-chip>
+            </mat-chip-list>
+            <mat-card-subtitle>Launchpad id : {{launchpad.id}} </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <h3>Details </h3>
+            <p>
+              {{launchpad.details}}
+            </p>
+          </mat-card-content>
+      </mat-card><br>
+    </div>
+  </mat-tab>
+  <mat-tab label="Retired">
+      <div *ngFor="let launchpad of launchpads">
+        <mat-card *ngIf="launchpad.status === 'retired'" routerLink="/launchpads/{{launchpad.id}}">
+            <mat-card-header>
+              <mat-card-title><h2>{{launchpad.full_name}}</h2></mat-card-title>
+              <mat-chip-list>
+                <mat-chip color="accent" selected="true">{{launchpad.status | uppercase}}</mat-chip>
+              </mat-chip-list>
+              <mat-card-subtitle>Launchpad id : {{launchpad.id}} </mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+              <h3>Details </h3>
+              <p>
+                {{launchpad.details}}
+              </p>
+            </mat-card-content>
+        </mat-card><br>
+      </div>
+    </mat-tab>
+    <mat-tab label="Under construction">
+        <div *ngFor="let launchpad of launchpads">
+          <mat-card *ngIf="launchpad.status === 'under construction'" routerLink="/launchpads/{{launchpad.id}}">
+              <mat-card-header>
+                <mat-card-title><h2>{{launchpad.full_name}}</h2></mat-card-title>
+                <mat-chip-list>
+                  <mat-chip color="accent" selected="true">{{launchpad.status | uppercase}}</mat-chip>
+                </mat-chip-list>
+                <mat-card-subtitle>Launchpad id : {{launchpad.id}} </mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>Details </h3>
+                <p>
+                  {{launchpad.details}}
+                </p>
+              </mat-card-content>
+          </mat-card><br>
         </div>
-        <mat-card-subtitle>{{launchpad.details}}}</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>
-          {{launchpad.details}}
-        </p>
-      </mat-card-content>
-  </mat-card>
-</div>
+      </mat-tab>
+</mat-tab-group>
