@@ -1,0 +1,37 @@
+<div *ngIf="capsuleInfo">
+    <mat-card>
+      <mat-card-title><h1>{{ launchpad.full_name}} Details</h1></mat-card-title>
+      <mat-card-subtitle> Status : {{launchpad.status}} </mat-card-subtitle>
+      <mat-card-content>
+        <h2>Description</h2>
+        {{launchpad.details}}
+        <h2>Location </h2>
+        Name : {{ launchpad.location.name }} <br>
+        Region : {{ launchpad.location.region }} <br>
+        Latitude : {{ launchpad.location.latitude }} <br>
+        Longitude : {{ launchpad.location.longitude }} <br>
+        <h2>Vehicles launched</h2>
+        <ul>
+          <li *ngFor="let vehicle of launchpad.vehicles_launched">
+            {{vehicle}}
+          </li> 
+        </ul>
+      </mat-card-content>
+      <mat-card-actions>
+          <button mat-raised-button color="primary">
+            <mat-icon>thumb_up</mat-icon>
+            Like
+          </button>
+          <button mat-raised-button color="primary">
+            <mat-icon>share</mat-icon>
+            Share
+          </button>
+          <button mat-button color="primary">
+              <mat-icon>report</mat-icon>
+              Something wrong ?
+            </button>
+        </mat-card-actions>
+    </mat-card>
+  </div>
+  
+  
