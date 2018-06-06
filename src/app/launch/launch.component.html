@@ -1,13 +1,13 @@
 <mat-card>
   <mat-card-header>
-    <img mat-card-avatar src="{{launch.links.mission_patch_small}}" />
+    <img mat-card-avatar src="{{launch.links.mission_patch_small ? launch.links.mission_patch_small : 'https://picsum.photos/200/300'}}" />
     <mat-card-title>{{launch.mission_name}}</mat-card-title>
     <div>
       <mat-chip-list>
         <mat-chip color="accent" selected="true">{{launch._id}}</mat-chip>
       </mat-chip-list>
     </div>
-    <mat-card-subtitle>{{launch.launch_date_utc | date:'yyyy-MM-dd HH:mm'}}</mat-card-subtitle>
+    <mat-card-subtitle>{{launch.launch_date_utc | date:'dd/MM/yyyy HH:mm'}}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-content>
     <p>
