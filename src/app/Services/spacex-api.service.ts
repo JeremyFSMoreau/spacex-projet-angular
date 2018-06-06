@@ -81,6 +81,14 @@ export class SpacexApiService {
       );
   }
 
+  getLaunchpadDetails(id): Observable<Launchpad> {
+    const endpoint = `${this.baseUrl}/launchpads/${id}`;
+    return this.httpClient.get<Launchpad>(endpoint)
+        .pipe(
+            catchError(this.handleError)
+        );
+}
+
   // Handlers
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
