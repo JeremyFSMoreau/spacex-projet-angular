@@ -15,6 +15,7 @@ import { LaunchpadComponent } from './launchpad/launchpad.component';
 import {RocketsComponent} from './rockets/rockets.component';
 import {RocketDetailsComponent} from './rocket-details/rocket-details.component';
 import { LaunchpadDetailsComponent } from './launchpad-details/launchpad-details.component';
+import { CapsuleInfoDetailsComponent } from './capsule-info-details/capsule-info-details.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LaunchpadDetailsComponent } from './launchpad-details/launchpad-details
     LaunchComponent,
     RocketsComponent,
     RocketDetailsComponent,
-    LaunchpadDetailsComponent
+    LaunchpadDetailsComponent,
+    CapsuleInfoDetailsComponent
   ],
   imports: [
     BrowserModule,
