@@ -7,11 +7,12 @@ import { SpacexApiService } from '../Services/spacex-api.service';
   styleUrls: ['./capsule-info.component.css']
 })
 export class CapsuleInfoComponent implements OnInit {
-  capsuleInfo: CapsuleInfo;
+  capsuleInfo: CapsuleInfo[];
 
   constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getCapsuleInfo().subscribe(data => {
+    this.spacexApi.getCapsuleInfo<CapsuleInfo[]>().subscribe(data => {
       this.capsuleInfo = data;
+      console.log(this.capsuleInfo);
     });
   }
   ngOnInit() {
