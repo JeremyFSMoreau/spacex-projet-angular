@@ -1,22 +1,41 @@
 <div *ngIf="capsuleInfo">
     <mat-card>
-      <mat-card-title><h1>{{ launchpad.full_name}} Details</h1></mat-card-title>
-      <mat-card-subtitle> Status : {{launchpad.status}} </mat-card-subtitle>
+      <mat-card-title><h1>{{ capsuleInfo.name}}</h1></mat-card-title>
+      <mat-card-subtitle> Type : {{capsuleInfo.type}} </mat-card-subtitle>
       <mat-card-content>
-        <h2>Description</h2>
-        {{launchpad.details}}
-        <h2>Location </h2>
-        Name : {{ launchpad.location.name }} <br>
-        Region : {{ launchpad.location.region }} <br>
-        Latitude : {{ launchpad.location.latitude }} <br>
-        Longitude : {{ launchpad.location.longitude }} <br>
-        <h2>Vehicles launched</h2>
-        <ul>
-          <li *ngFor="let vehicle of launchpad.vehicles_launched">
-            {{vehicle}}
-          </li> 
-        </ul>
+        <h2>Details of the {{capsuleInfo.name}} </h2>
+
+        <mat-accordion>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Capsule Info
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+
+              <li *ngFor="let item of capsuleInfoArray">
+                <span>{{item.key}} : </span>{{item.value}}
+              </li>              
+
+              <!-- <p><span>Type :</span>{{ capsuleInfo.type }}</p>
+              <p><span>duration year :</span>{{ capsuleInfo.orbit_duration_yr }}</p>
+              <p><span>Crew capacity :</span>{{ capsuleInfo.crew_capacity }}</p> -->
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Diameter
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <p><span>meters :</span>{{ capsuleInfo.diameter.meters }}</p>
+              <p><span>feet :</span>{{ capsuleInfo.diameter.feet }}</p>
+            </mat-expansion-panel>
+          </mat-accordion>
+
       </mat-card-content>
+
       <mat-card-actions>
           <button mat-raised-button color="primary">
             <mat-icon>thumb_up</mat-icon>
