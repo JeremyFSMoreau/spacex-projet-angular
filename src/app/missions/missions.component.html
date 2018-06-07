@@ -1,12 +1,5 @@
 <mat-tab-group *ngIf="pastLaunches && pastLaunches" class="app-missions">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span matBadge="{{nextLaunches.length}}" matBadgeColor="accent" matBadgeOverlap="false">Next</span>
-    </ng-template>
-    <div *ngFor="let launch of nextLaunches">
-      <app-launch [launch]= "launch"></app-launch>
-    </div>
-  </mat-tab>
+    
   <mat-tab>
     <ng-template mat-tab-label>
       <span matBadge="{{pastLaunches.length}}" matBadgeColor="accent" matBadgeOverlap="false">Past</span>
@@ -15,4 +8,17 @@
       <app-launch [launch]= "launch"></app-launch>
     </div>
   </mat-tab>
+  
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span matBadge="{{nextLaunches.length}}" matBadgeColor="accent" matBadgeOverlap="false">Next</span>
+    </ng-template>
+    <div *ngFor="let launch of nextLaunches">
+      <app-launch [launch]= "launch"></app-launch>
+    </div>
+  </mat-tab>
+
+  
+
+  
 </mat-tab-group>

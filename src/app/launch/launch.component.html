@@ -14,4 +14,27 @@
       {{launch.details}}
     </p>
   </mat-card-content>
+  <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>See more details</b> 
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <h2> Rocket </h2>
+      <a routerLink="/rockets/{{launch.rocket.rocket_id}}" target="_blank">{{launch.rocket.rocket_name}}</a>
+      <h2> Launch site </h2>
+      <a routerLink="/launchpads/{{launch.launch_site.site_id}}" target="_blank">{{launch.launch_site.site_name_long}}</a>
+      <h2> Links </h2>
+      <ul>
+        <li *ngIf="launch.links.article_link != null ">
+          <a href="{{launch.links.article_link}}" target="_blank"> Article </a>
+        </li>
+        <li *ngIf="launch.links.wikipedia != null ">
+          <a href="{{launch.links.wikipedia}}" target="_blank"> Wikipedia </a>
+        </li>
+        <li *ngIf="launch.links.video_link != null ">
+          <a href="{{launch.links.video_link}}" target="_blank"> Video </a>
+        </li>
+      </ul>
+  </mat-expansion-panel>
 </mat-card>
