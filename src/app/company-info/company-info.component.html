@@ -20,3 +20,32 @@
     </button>
   </mat-card-actions>
 </mat-card>
+
+<mat-card>
+<h2> Space X History </h2>
+
+  <mat-accordion *ngFor="let history of companyHistory">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          <b>{{history.title}}</b>&nbsp; {{history.event_date_utc | date:'dd/MM/yyyy HH:mm'}}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <h2 *ngIf="history.flight_number != null "> Flight number {{ history.flight_number }}</h2>
+      <h2> Details </h2>
+      <p>{{history.details}}</p>
+      <h2> Links </h2>
+      <ul>
+        <li *ngIf="history.links.reddit != null ">
+          <a href="{{history.links.reddit}}" target="_blank"> Reddit </a>
+        </li>
+        <li *ngIf="history.links.article != null ">
+          <a href="{{history.links.article}}" target="_blank"> Article </a>
+        </li>
+        <li *ngIf="history.links.wikipedia != null ">
+          <a href="{{history.links.wikipedia}}" target="_blank"> Wikipedia </a>
+        </li>
+      </ul>
+    </mat-expansion-panel>
+  </mat-accordion>
+</mat-card>

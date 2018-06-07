@@ -8,11 +8,17 @@ import { SpacexApiService } from '../Services/spacex-api.service';
 })
 export class CompanyInfoComponent implements OnInit {
   companyInfo: CompanyInfo;
+  companyHistory: CompanyHistory
 
   constructor(private spacexApi: SpacexApiService) {
     this.spacexApi.getCompanyInfo().subscribe(data => {
       this.companyInfo = data;
     });
+
+    this.spacexApi.getCompanyHistory().subscribe(data => {
+      this.companyHistory = data;
+    });
+
   }
   ngOnInit() {
   }
