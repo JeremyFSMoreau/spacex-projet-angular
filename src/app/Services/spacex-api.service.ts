@@ -79,6 +79,10 @@ export class SpacexApiService {
         );
   }
 
+  generateArray(obj){
+    return Object.keys(obj).map((key)=>{ return {key:key, value:obj[key]}});
+  }
+
   // Launchpad
 
   getLaunchpad<Launchpad>(): Observable<Launchpad> {
