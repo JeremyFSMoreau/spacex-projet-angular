@@ -9,8 +9,10 @@ import { LaunchpadComponent } from '../launchpad/launchpad.component';
 import { RocketsComponent } from '../rockets/rockets.component';
 import { RocketDetailsComponent } from '../rocket-details/rocket-details.component';
 import { LaunchpadDetailsComponent } from '../launchpad-details/launchpad-details.component';
+import { HomepageComponent } from '../homepage/homepage.component';
 
 const appRoutes: Routes = [
+  { path: '', component: HomepageComponent },
   { path: 'missions', component: MissionsComponent },
   { path: 'companyInfo', component: CompanyInfoComponent },
   { path: 'capsuleInfo', component: CapsuleInfoComponent }, 

@@ -10,6 +10,10 @@ import { MissionsComponent } from './missions/missions.component';
 export class AppComponent {
   public menuItems = [
     {
+      name: 'Homepage',
+      path: '/'
+    },
+    {
       name: 'Missions',
       path: '/missions'
     },

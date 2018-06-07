@@ -61,6 +61,14 @@ export class SpacexApiService {
       );
   }
 
+  getNextLaunch(id): Observable<Launch> {
+    const endpoint = `${this.baseUrl}/launches/next`;
+    return this.httpClient.get<Launch>(endpoint)
+        .pipe(
+            catchError(this.handleError)
+        );
+  }
+
   //Capsule Info
 
   getCapsuleInfo<CapsuleInfo>(): Observable<CapsuleInfo> {
