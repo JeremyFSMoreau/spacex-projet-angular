@@ -1,28 +1,58 @@
 <div *ngIf="rocket">
-    <h1>
-        {{ rocket.name | uppercase }} Details
-    </h1>
-    <div>
-        {{rocket.description}}
-    </div>
-    <div>
-        <span class="label">Type: </span>{{rocket.type}} - <span class="label">First flight: </span>{{rocket.first_flight | date:'dd/MM/yyyy'}}
-    </div>
-    <h2>
-        Caracteristics
-    </h2>
-    <table>
-        <thead>
-            <th>Height (meters)</th>
-            <th>Diameter (meters)</th>
-            <th>Mass (kg)</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{rocket.height.meters}}</td>
-                <td>{{rocket.diameter.meters}}</td>
-                <td>{{rocket.mass.kg}}</td>
-            </tr>
-        </tbody>
-    </table>
+    <mat-card>
+        <mat-card-title><h1>{{ rocket.name | uppercase }}</h1></mat-card-title>
+        <mat-card-subtitle> Type : {{rocket.type}} </mat-card-subtitle>
+        <mat-card-content>
+            <h2>Details of the {{rocket.name}} </h2>
+
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Rocket Description
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    {{rocket.description}}
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Rocket Caracteristics
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>Height: <span class="rocket-detail">{{ rocket.height.meters }} meters</span></div>
+                    <div>Diameter: <span class="rocket-detail">{{ rocket.diameter.meters }} meters</span></div>
+                    <div>Mass: <span class="rocket-detail">{{ rocket.mass.kg }}kg</span></div>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                                     (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Rocket Flights
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div>First flight: <span class="rocket-detail"> {{rocket.first_flight | date:'dd/MM/yyyy'}}</span></div>
+                    <div>Price per flight: <span class="rocket-detail">{{rocket.cost_per_launch}} € / launch</span></div>
+                </mat-expansion-panel>
+            </mat-accordion>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary">
+                <mat-icon>thumb_up</mat-icon>
+                Like
+            </button>
+            <button mat-raised-button color="primary">
+                <mat-icon>share</mat-icon>
+                Share
+            </button>
+            <button mat-button color="primary">
+                <mat-icon>report</mat-icon>
+                Something wrong ?
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </div>
