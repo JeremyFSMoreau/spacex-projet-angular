@@ -61,7 +61,7 @@ export class SpacexApiService {
       );
   }
 
-  getNextLaunch(id): Observable<Launch> {
+  getNextLaunch(): Observable<Launch> {
     const endpoint = `${this.baseUrl}/launches/next`;
     return this.httpClient.get<Launch>(endpoint)
         .pipe(
