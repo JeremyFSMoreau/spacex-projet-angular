@@ -17,6 +17,7 @@ import {RocketDetailsComponent} from './rocket-details/rocket-details.component'
 import { LaunchpadDetailsComponent } from './launchpad-details/launchpad-details.component';
 import { CapsuleInfoDetailsComponent } from './capsule-info-details/capsule-info-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    CountdownTimerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

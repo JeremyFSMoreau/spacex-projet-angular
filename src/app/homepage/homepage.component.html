@@ -1,9 +1,13 @@
+<mat-card class="homepage">
+  <mat-card-content *ngIf="nextLaunch">
+    <h1>Prochain lancement</h1>
+    <h1>{{ nextLaunch.mission_name }} - {{ nextLaunch.launch_date_utc | date:'dd/MM/yyyy' }}</h1>
 
-<mat-card>
-  <mat-card-header>
-    <mat-card-title><h1>Prochain lancement</h1></mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    {{dateLaunch}}
-  </mat-card-content>  
+    <div class="lauch_site">{{ nextLaunch.launch_site.site_name_long }}</div>
+
+    <div class="countdown">
+      <p>Countdown (days, hours, minutes, seconds):</p>
+      <countdown-timer class="countdown-timer" [end]="nextLaunchDate"></countdown-timer>
+    </div>
+  </mat-card-content>
 </mat-card>
