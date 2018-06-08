@@ -1,0 +1,31 @@
+.countdown {
+    text-align: center;
+    width: 100%;
+    font-size: 40px;
+    margin-top: 10%;
+}
+.countdown-timer {
+    font-size: 50px;
+    font-weight: bold;
+}
+body {
+    height: 100%;
+}
+.sidenav-content {
+    padding: 0 !important;
+}
+.homepage
+{
+    position: relative;
+    top: -20px;
+    background-image: url('../../assets/img/homepage-background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+.homepage h1 {
+    width: auto;
+}

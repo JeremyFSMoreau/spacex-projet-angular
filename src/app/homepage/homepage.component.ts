@@ -10,20 +10,16 @@ import { map } from 'rxjs/operators'
 })
 export class HomepageComponent implements OnInit {
   nextLaunch: Launch;
-
+  nextLaunchDate: string;
   constructor(private spacexApi: SpacexApiService) {
-    this.spacexApi.getNextLaunch().subscribe(data => {
-      this.nextLaunch = data;
-      console.log(this.nextLaunch);
-    });
-  }  
+      this.spacexApi.getNextLaunch().subscribe(data => {
+          this.nextLaunch = data;
+          this.nextLaunchDate = new Date(this.nextLaunch.launch_date_utc).toDateString();
+      });
+  }
 
   ngOnInit() {
-    interval(1000).pipe(
-      map((x) => {  
-
-      })
-    );
-  } 
+      document.body.classList.add('bg-img');
+  }
 
 }
