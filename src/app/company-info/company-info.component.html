@@ -23,8 +23,11 @@
 
 <mat-card>
   <h2> Space X History </h2>
-  <mat-accordion *ngFor="let history of companyHistory">
-    <mat-expansion-panel>
+  <mat-card-content>
+  <mat-accordion >
+    <ng-container *ngFor="let history of companyHistory">
+    <mat-expansion-panel (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false">
       <mat-expansion-panel-header>
         <mat-panel-title>
           <b>{{history.title}}</b>&nbsp; {{history.event_date_utc | date:'dd/MM/yyyy HH:mm'}}
@@ -46,5 +49,7 @@
         </li>
       </ul>
     </mat-expansion-panel>
+  </ng-container>
   </mat-accordion>
+  </mat-card-content>
 </mat-card>
